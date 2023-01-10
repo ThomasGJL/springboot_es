@@ -11,7 +11,7 @@
     <groupId>com.example</groupId>
     <artifactId>springboot_es</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>springboot_es1</name>
+    <name>springboot_es</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
