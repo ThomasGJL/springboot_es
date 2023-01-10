@@ -22,19 +22,25 @@ vi config/elasticsearch.yml
 ```
   
 加上两行： 
-
-```
+  
 http.cors.enabled: true  
 http.cors.allow-origin: "*"  
-
+  
+```
 exit  
 docker restart 容器id  
 ```
 
 如 elasticsearch-head 无法正常显示，需要修改： 
 
+```
+docker exec -it elasticsearch-head /bin/bash
+cd _site
+vi vendor.js
+```
+  
 找到vendor.js，修改文件里的两处：  
-
+  
 1、6886行  
 contentType: "application/x-www-form-urlencoded  
 改成  
@@ -44,6 +50,8 @@ contentType: “application/json;charset=UTF-8”
 var inspectData = s.contentType === “application/x-www-form-urlencoded” &&  
 改成  
 var inspectData = s.contentType === “application/json;charset=UTF-8” &&  
-
-
-
+  
+```
+exit  
+docker restart 容器id  
+```
